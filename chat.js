@@ -25,7 +25,8 @@ const top = (t, back, action = 'back') => '<div class="dlgacts" style="margin:0 
 function show() {
   stop();
   if (!ok) return view(top('Chat') + '<p>Chat needs a free Firebase project. Add its details to firebase-config.js, then deploy again.</p>');
-  if (!me) return view(top('Chat') + '<label>Email</label><input id="cE" type="email"><label>Password (6+ characters)</label><div class="pwrow"><input id="cP" type="password" autocomplete="current-password"><button type="button" class="pw-toggle" data-a="toggle-password" data-target="cP" aria-label="Show password" title="Show password">&#128065;</button></div><p class="err" id="cErr"></p><div class="dlgacts"><button type="button" data-a="in">Sign in</button><button type="button" class="main" data-a="up">Create account</button></div>');
+  if (!me) return view(top('Chat') + '<p>Please sign in through the Hellokin welcome screen to use Chat.</p>');
+  /* if (!me) return view(top('Chat') + '<label>Email</label><input id="cE" type="email"><label>Password (6+ characters)</label><div class="pwrow"><input id="cP" type="password" autocomplete="current-password"><button type="button" class="pw-toggle" data-a="toggle-password" data-target="cP" aria-label="Show password" title="Show password">&#128065;</button></div><p class="err" id="cErr"></p><div class="dlgacts"><button type="button" data-a="in">Sign in</button><button type="button" class="main" data-a="up">Create account</button></div>'); */
   if (!me.username) return view(top('Pick a username') + '<label>Username (letters, numbers, _)</label><input id="cU" autocapitalize="none"><p class="err" id="cErr"></p><button type="button" class="main" data-a="uname">Save username</button>');
   chatList();
 }
