@@ -678,20 +678,14 @@ nav button {
 (function () {
   const splash = document.getElementById('hkSplash');
   if (!splash) return;
-  let hidden = false;
 
   function hideSplash() {
-    if (hidden) return;
-    hidden = true;
     splash.classList.add('hk-hidden');
     setTimeout(() => splash.remove(), 350);
   }
 
-  window.addEventListener('load', () => {
-    setTimeout(hideSplash, 700);
-  }, { once: true });
-
-  setTimeout(hideSplash, 8000);
+  window.addEventListener('load', hideSplash, { once: true });
+  setTimeout(hideSplash, 3000);
 })();
 </script>
 
